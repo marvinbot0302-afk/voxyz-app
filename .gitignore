@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+.next/
+dist/
+out/
+.env
+.env.*
+.DS_Store
+*.log
