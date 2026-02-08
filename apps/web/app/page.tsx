@@ -32,10 +32,13 @@ export default function Home() {
             <div className="mt-2 text-sm text-white/70">Texas Hold’em, step-by-step.</div>
           </Link>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <Link
+            href="/agent-world"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10"
+          >
             <div className="text-lg font-medium">Agent World</div>
-            <div className="mt-2 text-sm text-white/70">(Coming next)</div>
-          </div>
+            <div className="mt-2 text-sm text-white/70">Main app prototype.</div>
+          </Link>
         </div>
       </div>
     </main>

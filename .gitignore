@@ -3,6 +3,9 @@ node_modules/
 .next/
 dist/
 out/
+playwright-report/
+test-results/
+.vercel/
 .env
 .env.*
 .DS_Store

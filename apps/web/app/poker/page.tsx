@@ -22,9 +22,12 @@ export default function PokerPage() {
             <p className="mt-2 text-sm text-white/70">
               The foundation. Learn it in minutes with instant feedback.
             </p>
-            <button className="mt-4 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white/90">
+            <Link
+              href="/poker/rankings"
+              className="mt-4 inline-flex rounded-xl bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white/90"
+            >
               Begin
-            </button>
+            </Link>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/5 p-6">

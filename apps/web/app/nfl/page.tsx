@@ -27,9 +27,12 @@ export default function NflPage() {
             <p className="mt-2 text-sm text-white/70">
               The one concept that makes the whole game click.
             </p>
-            <button className="mt-4 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white/90">
+            <Link
+              href="/nfl/downs"
+              className="mt-4 inline-flex rounded-xl bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white/90"
+            >
               Begin
-            </button>
+            </Link>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
