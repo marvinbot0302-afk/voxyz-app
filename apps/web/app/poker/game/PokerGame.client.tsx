@@ -306,7 +306,7 @@ function advanceStreet(state: HandState) {
     s.street = "SHOWDOWN";
   }
   // Postflop: first to act is non-dealer in heads up
-  if (s.street !== "PREFLOP" && s.street !== "SHOWDOWN") {
+  if (s.street === "FLOP" || s.street === "TURN" || s.street === "RIVER") {
     s.actor = other(s.dealer);
   }
   return resetStreetBets(s);
