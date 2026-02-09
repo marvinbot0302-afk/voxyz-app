@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 export default function Home() {
   const flavor = (process.env.APP_FLAVOR || "").toLowerCase();
 
-  if (flavor === "nfl") redirect("/nfl");
   if (flavor === "poker") redirect("/poker");
 
   return (
@@ -15,21 +14,13 @@ export default function Home() {
           Agent World + interactive tutors.
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-4">
-          <Link
-            href="/nfl"
-            className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10"
-          >
-            <div className="text-lg font-medium">NFL Rules Tutor</div>
-            <div className="mt-2 text-sm text-white/70">Learn by scenarios.</div>
-          </Link>
-
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <Link
             href="/poker"
             className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10"
           >
-            <div className="text-lg font-medium">Poker Tutor</div>
-            <div className="mt-2 text-sm text-white/70">Texas Hold’em, step-by-step.</div>
+            <div className="text-lg font-medium">Poker</div>
+            <div className="mt-2 text-sm text-white/70">Interactive game + coach.</div>
           </Link>
 
           <Link
