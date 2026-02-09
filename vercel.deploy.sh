@@ -14,22 +14,22 @@ deploy_one() {
 
   echo "--- Deploying $project (flavor=$flavor)"
 
-  # Ensure Vercel metadata exists
-  mkdir -p "$APP_DIR/.vercel"
-  cat > "$APP_DIR/.vercel/project.json" <<JSON
-{"projectId":null,"orgId":null}
-JSON
-
-  # Link (non-interactive) by creating a new project if needed.
-  # We rely on Vercel CLI to create the project on first deploy.
-
-  # Deploy prebuilt? For speed, do normal deploy.
-  (cd "$APP_DIR" && npx -y vercel@latest \
+  # Note: do NOT pre-create apps/web/.vercel/project.json.
+  # Writing a stub project.json (e.g., {projectId:null,orgId:null}) can make Vercel
+  # reject deploys with “Project Settings are invalid”. Let the Vercel CLI link/create
+  # the project itself based on flags/token.
+  # Ensure correct project linkage for this deploy.
+  (cd "$APP_DIR" && rm -rf .vercel)
+  (cd "$APP_DIR" && npx -y vercel@latest link \
     --token "$VERCEL_TOKEN" \
-    --name "$project" \
+    --project "$project" \
+    --yes)
+
+  (cd "$APP_DIR" && npx -y vercel@latest deploy \
+    --token "$VERCEL_TOKEN" \
     --env APP_FLAVOR="$flavor" \
     --build-env APP_FLAVOR="$flavor" \
-    --confirm \
+    --yes \
     --prod)
 }
 
