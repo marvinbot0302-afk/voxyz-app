@@ -31,13 +31,16 @@ export default function PokerPage() {
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h2 className="text-lg font-medium">Hand Lab</h2>
+            <h2 className="text-lg font-medium">Interactive Game + Coach</h2>
             <p className="mt-2 text-sm text-white/70">
-              Pick hole cards + board. We explain the best 5-card hand.
+              Play real hands (heads-up). Learn betting flow and decisions.
             </p>
-            <button className="mt-4 rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white hover:bg-white/10">
-              Try a hand
-            </button>
+            <Link
+              href="/poker/game"
+              className="mt-4 inline-flex rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
+            >
+              Play a hand
+            </Link>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:col-span-2">
