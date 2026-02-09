@@ -438,7 +438,6 @@ function legalActions(state: HandState, pid: PlayerId) {
 
 function coachSuggestion(state: HandState) {
   // Simple: use current hand strength proxy from 7-card eval when possible.
-  const streetCards = [...state.heroCards, ...state.board] as Card[];
   const have7 = state.board.length >= 3;
   const rank = have7 ? eval7([...state.heroCards, ...state.board]) : null;
 
@@ -631,7 +630,8 @@ export function PokerGame() {
   }
 
   function onHeroAction(a: { kind: ActionKind; amount?: number }) {
-    let s = structuredClone(state) as HandState;
+    const s0 = structuredClone(state) as HandState;
+    let s = s0;
     if (!heroTurn) return;
 
     const callAmt = toCall(s, "HERO");
