@@ -15,7 +15,7 @@ export default function Home() {
           Agent World + interactive tutors.
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-4">
           <Link
             href="/nfl"
             className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10"
@@ -38,6 +38,14 @@ export default function Home() {
           >
             <div className="text-lg font-medium">Agent World</div>
             <div className="mt-2 text-sm text-white/70">Main app prototype.</div>
+          </Link>
+
+          <Link
+            href="/valentines"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10"
+          >
+            <div className="text-lg font-medium">Valentines</div>
+            <div className="mt-2 text-sm text-white/70">10 tiny interactive pages.</div>
           </Link>
         </div>
       </div>
