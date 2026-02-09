@@ -567,7 +567,7 @@ function botAct(state: HandState): HandState {
 }
 
 function settleIfEnded(state: HandState): HandState {
-  let s = structuredClone(state) as HandState;
+  const s = structuredClone(state) as HandState;
 
   // If someone folded
   if (!s.hero.inHand || !s.villain.inHand) {
